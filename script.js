@@ -70,6 +70,9 @@ const RenderTable = (ListPerssonel = Perssonel) => {
     missionBtn.textContent = "Mission";
     missionBtn.id = "btnMission";
     missionBtn.className = "btnGreen";
+    if (Persson.status === "Retired") {
+        missionBtn.style.display = "none";
+      }
     // missionBtn.className = 'displayNone';
     missionBtn.onclick = () => missionPerssonel(index);
     const editBtn = document.createElement("button");
@@ -100,18 +103,17 @@ const removePerssonel = (index) => {
 };
 
 const missionPerssonel = (index) => {
-  let time = Perssonel[index].mission_time;
-  setInterval(() => {
-    const btnMission = document.querySelector("#btnMission");
-    btnMission.textContent = `Mission Time: ${time}`;
-    time--;
-    if (time < 0) {
-      clearInterval();
-      btnMission.textContent = "Mission Completed";
-    }
-  }, 1000);
-};
-
+    let time = parseInt(Perssonel[index].mission_time);
+    const btnMission = document.querySelector(`#btnMission-${index}`);
+    const countdown = setInterval(() => {
+      btnMission.textContent = `Mission Time: ${time}`;
+      time--;
+      if (time < 0) {
+        clearInterval(countdown);
+        btnMission.textContent = "Mission Completed";
+      }
+    }, 1000);
+  };
 const editPersson = (index) => {
   const header = document.querySelector("header");
   const main = document.querySelector("main");
