@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>BATTALION FORCE MANAGEMENT</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>BATTALION FORCE MANAGEMENT</h1>
+    </header>
+    <main>
+<form>
+<input type="text" id="input_name" placeholder="enter your full name">
+<input type="text" id="input_rank" placeholder="enter your rank">
+<input type="text" id="input_position" placeholder="enter position">
+<input type="text" id="input_platoon" placeholder="enter platoon">
+<input type="number" id="input_mission_time" placeholder="enter mission time (seconds)">
+<select name="status" id="status">
+    <option value="Active">Active</option>
+    <option value="Reserve">Reserve</option>
+    <option value="Retired">Retired</option>
+</select>
+<button id="btnAdd">Add Personnel</button>
+</form>
+<div class="button_line">
+<h2>FORCES OVERVIEW</h2>
+</div>
+
+
+<table>
+    <tr id="table_head">
+        <th><button id="btnSortName">Full Name ⭣</button></th>
+        <th>Rank</th>
+        <th>Position</th>
+        <th>Platoon</th>
+        <th>Mission Time</th>
+        <th>Status</th>
+        <th>Actions</th>
+    </tr>
+    <tbody id="table_body">
+
+    </tbody>
+</table>
+</main>
+<form id="edit_form">
+    <input type="text" id="edit_name" placeholder="enter your full name">
+    <input type="text" id="edit_rank" placeholder="enter your rank">
+    <input type="text" id="edit_position" placeholder="enter position">
+    <input type="text" id="edit_platoon" placeholder="enter platoon">
+    <input type="number" id="edit_mission_time" placeholder="enter mission time (seconds)">
+    <select name="edit_status" id="edit_status">
+        <option value="Active">Active</option>
+        <option value="Reserve">Reserve</option>
+        <option value="Retired">Retired</option>
+    </select>
+    <button id="btnSaveEdit">Save Change</button>
+    <button id="btnCancel">Cancel</button>
+</form>
+</body>
+</html>
